@@ -15,7 +15,6 @@ mongoose.connect(
 
 
 /////// Middleys//////////
-
 /// body parser for json
 app.use(express.json())
 
