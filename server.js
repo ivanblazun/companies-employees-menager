@@ -21,6 +21,7 @@ app.use(express.json())
 // Routes
 app.use('/api/testRoute', require('./routes/testRoute'))
 app.use('/api/register', require('./routes/register'))
+app.use('/api/login', require('./routes/login'))
 
 const PORT = 5000 || process.env.PORT
 
