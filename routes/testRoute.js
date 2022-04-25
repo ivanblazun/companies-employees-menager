@@ -4,9 +4,9 @@ const router = express.Router();
 const auth = require('../middleware/auth')
 
 
-router.get('/', auth, async (req, res) => {
+router.get('/', auth, (req, res) => {
 
-  await res.send('<h1>this is test route</h1>')
+  res.send('<h1>this is test route</h1>')
 })
 
 module.exports = router
