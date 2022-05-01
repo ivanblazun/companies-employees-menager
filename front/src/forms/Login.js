@@ -7,12 +7,11 @@ const Login = () => {
     password: null
   })
 
-  // Login call
+  // Login user call
   const loginUser = async () => {
     const res = await axios.post('http://localhost:5000/api/login', user)
     const token = res.data
     localStorage.setItem('token', token)
-    console.log(token)
   }
 
   const onChange = async (e) => {
@@ -26,8 +25,6 @@ const Login = () => {
     e.preventDefault()
     loginUser()
   }
-
-
 
   return (
     <div>
