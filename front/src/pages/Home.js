@@ -17,7 +17,6 @@ const Home = () => {
           "auth-token": token,
         }
       })
-    console.log(res)
   }
 
   useEffect(() => {
@@ -25,7 +24,8 @@ const Home = () => {
     logedCheck()
   }, [])
   return (
-    <div>
+    <div className='all-center'>
+      <h1>Home</h1>
       {!isLoged ?
         <h1>Not Loged</h1> :
         <h1>Is Loged</h1>}

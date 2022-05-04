@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -10,8 +11,11 @@ const Login = () => {
   // Login user call
   const loginUser = async () => {
     const res = await axios.post('http://localhost:5000/api/login', user)
-    const token = res.data
+    const token = await res.data
+
     localStorage.setItem('token', token)
+
+    navToHome()
   }
 
   const onChange = async (e) => {
@@ -24,6 +28,14 @@ const Login = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     loginUser()
+  }
+
+  // nav to home after token recived
+  let navigate = useNavigate();
+  const navToHome = () => {
+    let home = '/'
+    navigate(home)
+    window.location.reload()
   }
 
   return (

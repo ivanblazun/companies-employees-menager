@@ -114,12 +114,25 @@ img {
 /* Center All */
 .all-center {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   margin: auto;
-  justify-content: center;
+  justify-content:space-around ;
   align-items: center;
   text-align: center;
+}
+.company-card {
+  display: flex;
+  flex-direction:column;
+  width: 100%;
+  margin: auto;
+  justify-content:space-around ;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+.company-card-item{
+  margin: 1rem;
 }
 
 /* Cards */
