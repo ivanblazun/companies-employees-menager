@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
@@ -21,6 +22,8 @@ const Register = () => {
     e.preventDefault()
     console.log(user)
     registerUser()
+
+    navToHome()
   }
 
   const registerUser = async () => {
@@ -31,6 +34,14 @@ const Register = () => {
       }
     })
     console.log(res)
+  }
+
+  // nav to login after registration
+  let navigate = useNavigate();
+  const navToHome = () => {
+    let home = '/login'
+    navigate(home)
+    window.location.reload()
   }
 
   return (

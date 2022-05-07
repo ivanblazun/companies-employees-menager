@@ -20,8 +20,10 @@ const Home = () => {
   }
 
   useEffect(() => {
-    setIsLoged(token)
-    logedCheck()
+    if (token) {
+      setIsLoged(token)
+      logedCheck()
+    }
   }, [])
   return (
     <div className='all-center'>
